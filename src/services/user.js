@@ -1,5 +1,9 @@
 const userModel = require('../models/User');
 
+//* GET ALL USERS
+exports.getUsers = async (_req, res) =>{const users = userModel.find({}).sort({createdAt:-1})
+res.status(200).send(users)}
+
 //* NEW USER
 exports.createUser = async (username, email) => {
 	try {

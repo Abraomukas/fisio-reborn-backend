@@ -3,9 +3,7 @@ const router = express.Router();
 
 const userController = require('../controllers/user');
 
-router.get('/', (_req, res) => {
-	res.json({ message: 'GET all users' });
-});
+router.get('/', userController.getUsers);
 
 router.get('/:id', (req, res) => {
 	res.json({ message: 'GET one user' });

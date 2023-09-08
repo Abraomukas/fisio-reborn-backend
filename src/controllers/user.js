@@ -1,5 +1,12 @@
 const userService = require('../services/user');
 
+//* GET ALL USERS
+exports.getUsers = async (_req, res)=>{
+    const users = await userService.getUsers()
+
+    res.status(200).send(users)
+}
+
 //* NEW USER
 exports.createUser = async (req, res) => {
 	try {
@@ -12,3 +19,4 @@ exports.createUser = async (req, res) => {
 		res.status(400).json({ message: err.message });
 	}
 };
+
