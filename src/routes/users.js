@@ -5,9 +5,7 @@ const userController = require('../controllers/user');
 
 router.get('/', userController.getUsers);
 
-router.get('/:id', (req, res) => {
-	res.json({ message: 'GET one user' });
-});
+router.get('/:email', userController.getUserWithEmail);
 
 router.post('/', userController.createUser);
 

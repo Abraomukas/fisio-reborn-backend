@@ -8,7 +8,7 @@ const getUsers = async (_req, res) => {
 };
 
 //* GET ONE USER
-const getUser = async (req, res) => {
+const getUserWithEmail = async (req, res) => {
 	const { email } = req.params;
 
 	const user = await userService.getUserWithEmail(email);
@@ -33,4 +33,4 @@ const createUser = async (req, res) => {
 	}
 };
 
-module.exports = { getUsers, getUser, createUser };
+module.exports = { getUsers, getUserWithEmail, createUser };
