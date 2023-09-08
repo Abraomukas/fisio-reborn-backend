@@ -1,21 +1,25 @@
 const userModel = require('../models/User');
 
 //* GET ALL USERS
-exports.getUsers = async () => {
+const getUsers = async () => {
 	const users = userModel.find({}).sort({ createdAt: -1 });
 
 	return users;
 };
 
 //* GET ONE USER
-exports.getUsers = async () => {
-	const users = userModel.find({}).sort({ createdAt: -1 });
+const getUser = async (email) => {
+	const user = userModel.findOne({ email });
 
-	return users;
+	if (!user) {
+		throw new Error('User not found!');
+	}
+
+	return user;
 };
 
 //* NEW USER
-exports.createUser = async (username, email) => {
+const createUser = async (username, email) => {
 	try {
 		const emailTaken = await userModel.findOne({ email });
 
@@ -32,3 +36,5 @@ exports.createUser = async (username, email) => {
 		throw err;
 	}
 };
+
+module.exports = { getUsers, getUser, createUser };

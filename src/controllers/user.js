@@ -17,7 +17,7 @@ const getUser = async (req, res) => {
 		return res.status(404).json({ message: 'User not found!' });
 	}
 
-	res.status(200).send(users);
+	res.status(200).send(user);
 };
 
 //* NEW USER
@@ -33,4 +33,4 @@ const createUser = async (req, res) => {
 	}
 };
 
-module.exports = { getUser, getUsers, createUser };
+module.exports = { getUsers, getUser, createUser };
