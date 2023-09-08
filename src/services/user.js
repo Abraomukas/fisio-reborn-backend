@@ -2,14 +2,14 @@ const userModel = require('../models/User');
 
 //* GET ALL USERS
 const getUsers = async () => {
-	const users = userModel.find({}).sort({ createdAt: -1 });
+	const users = await userModel.find({}).sort({ createdAt: -1 });
 
 	return users;
 };
 
 //* GET ONE USER
 const getUserWithEmail = async (email) => {
-	const user = userModel.findOne({ email });
+	const user = await userModel.findOne({ email });
 
 	if (!user) {
 		throw new Error('User not found!');
