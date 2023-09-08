@@ -2,9 +2,9 @@ const userService = require('../services/user');
 
 //* GET ALL USERS
 exports.getUsers = async (_req, res)=>{
-    const users = await userService.getUsers()
+    const users = await userService.getUsers();
 
-    res.status(200).send(users)
+		res.status(200).send(users);
 }
 
 //* NEW USER
