@@ -1,11 +1,32 @@
 {
-  "name": "fisio-reborn-backend",
-  "version": "1.0.0",
-  "description": "Backend for FisioReborn",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "abraomukas",
-  "license": "ISC"
+	"name": "fisio-reborn-backend",
+	"version": "1.0.0",
+	"description": "Backend for FisioReborn",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src/server.js"
+	},
+	"author": "abraomukas",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.2",
+		"mongoose": "^7.5.0",
+		"morgan": "^1.10.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Abraomukas/fisio-reborn-backend.git"
+	},
+	"keywords": [
+		"backend",
+		"node"
+	],
+	"bugs": {
+		"url": "https://github.com/Abraomukas/fisio-reborn-backend/issues"
+	},
+	"homepage": "https://github.com/Abraomukas/fisio-reborn-backend#readme",
+	"devDependencies": {
+		"dotenv": "^16.3.1",
+		"nodemon": "^3.0.1"
+	}
 }
