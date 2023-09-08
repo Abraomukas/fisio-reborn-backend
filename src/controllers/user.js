@@ -1,14 +1,27 @@
 const userService = require('../services/user');
 
 //* GET ALL USERS
-exports.getUsers = async (_req, res)=>{
-    const users = await userService.getUsers();
+const getUsers = async (_req, res) => {
+	const users = await userService.getUsers();
 
-		res.status(200).send(users);
-}
+	res.status(200).send(users);
+};
+
+//* GET ONE USER
+const getUser = async (req, res) => {
+	const { email } = req.params;
+
+	const user = await userService.getUserWthEmail(email);
+
+	if (!user) {
+		return res.status(404).json({ message: 'User not found!' });
+	}
+
+	res.status(200).send(users);
+};
 
 //* NEW USER
-exports.createUser = async (req, res) => {
+const createUser = async (req, res) => {
 	try {
 		const { username, email } = req.body;
 		const newUser = await userService.createUser(username, email);
@@ -20,3 +33,4 @@ exports.createUser = async (req, res) => {
 	}
 };
 
+module.exports = { getUser, getUsers, createUser };

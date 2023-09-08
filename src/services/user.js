@@ -1,9 +1,17 @@
 const userModel = require('../models/User');
 
 //* GET ALL USERS
-exports.getUsers = async (_req, res) => {
+exports.getUsers = async () => {
 	const users = userModel.find({}).sort({ createdAt: -1 });
-	res.status(200).send(users);
+
+	return users;
+};
+
+//* GET ONE USER
+exports.getUsers = async () => {
+	const users = userModel.find({}).sort({ createdAt: -1 });
+
+	return users;
 };
 
 //* NEW USER
