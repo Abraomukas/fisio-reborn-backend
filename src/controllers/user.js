@@ -11,7 +11,7 @@ const getUsers = async (_req, res) => {
 const getUser = async (req, res) => {
 	const { email } = req.params;
 
-	const user = await userService.getUserWthEmail(email);
+	const user = await userService.getUserWithEmail(email);
 
 	if (!user) {
 		return res.status(404).json({ message: 'User not found!' });

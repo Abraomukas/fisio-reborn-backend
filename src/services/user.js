@@ -8,7 +8,7 @@ const getUsers = async () => {
 };
 
 //* GET ONE USER
-const getUser = async (email) => {
+const getUserWithEmail = async (email) => {
 	const user = userModel.findOne({ email });
 
 	if (!user) {
@@ -37,4 +37,4 @@ const createUser = async (username, email) => {
 	}
 };
 
-module.exports = { getUsers, getUser, createUser };
+module.exports = { getUsers, getUserWithEmail, createUser };
